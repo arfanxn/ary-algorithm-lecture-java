@@ -63,8 +63,7 @@ public class MainUI {
                     Integer medicineHigherPrice = 0;
                     for(int i =0; i < jsonArray.length(); i++){
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
-                        Medicine medicineModel = new Medicine();
-                        medicineModel.fromJSON(jsonObject);
+                        Medicine medicineModel = (new Medicine()).fromJSON(jsonObject);
                         medicines.add(medicineModel);
 
                         // If any new medicine with higher price replace the old medicineHigherPrice value

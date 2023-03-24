@@ -149,27 +149,29 @@ public class Medicine {
     }
 
     // fromJSON fills model from the specified JSONObject
-    public void fromJSON (JSONObject jsonObject) {
+    public Medicine fromJSON (JSONObject jsonObject) {
         try {
-            id = jsonObject.getString("id");
-            iCode = jsonObject.getString("i_code");
-            gCode = jsonObject.getString("g_code");
-            supp = jsonObject.optString("i_supp");
-            barcode = jsonObject.getString("i_barcode");
-            name = jsonObject.getString("i_name");
-            qty = jsonObject.getInt("i_qty");
-            minQty = jsonObject.getInt("i_qtymin");
-            unit = jsonObject.getString("i_unit");
-            size = jsonObject.getString("i_size");
-            color = jsonObject.getString("i_color");
-            brand = jsonObject.getString("i_brands");
-            article = jsonObject.getString("i_article");
-            cogs = jsonObject.getInt("i_cogs");
-            sell = jsonObject.getInt("i_sell");
-            status = jsonObject.getString("i_status");
+            this.id = jsonObject.getString("id");
+            this.iCode = jsonObject.getString("i_code");
+            this.gCode = jsonObject.getString("g_code");
+            this.supp = jsonObject.optString("i_supp");
+            this.barcode = jsonObject.getString("i_barcode");
+            this.name = jsonObject.getString("i_name");
+            this.qty = jsonObject.getInt("i_qty");
+            this.minQty = jsonObject.getInt("i_qtymin");
+            this.unit = jsonObject.getString("i_unit");
+            this.size = jsonObject.getString("i_size");
+            this.color = jsonObject.getString("i_color");
+            this.brand = jsonObject.getString("i_brands");
+            this.article = jsonObject.getString("i_article");
+            this.cogs = jsonObject.getInt("i_cogs");
+            this.sell = jsonObject.getInt("i_sell");
+            this.status = jsonObject.getString("i_status");
         } catch (JSONException exception) {
             // Silent the error
             // System.out.println("Error: " + exception);
+        } finally {
+            return  this;
         }
     }
 
